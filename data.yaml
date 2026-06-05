@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 253
+names: ['a', 'ah', 'an', 'ang', 'ar', 'aw', 'ay', 'ba', 'bah', 'ban', 'bang', 'bar', 'baw', 'bay', 'be', 'bi', 'bo', 'bu', 'ca', 'cah', 'can', 'cang', 'car', 'caw', 'cay', 'ce', 'ci', 'co', 'cu', 'da', 'dah', 'dan', 'dang', 'dar', 'daw', 'day', 'de', 'di', 'do', 'du', 'e', 'ga', 'gah', 'gan', 'gang', 'gar', 'gaw', 'gay', 'ge', 'gi', 'go', 'gu', 'ha', 'hah', 'han', 'hang', 'har', 'haw', 'hay', 'he', 'hi', 'ho', 'hu', 'i', 'ja', 'jah', 'jan', 'jang', 'jar', 'jaw', 'jay', 'je', 'ji', 'jo', 'ju', 'ka', 'kah', 'kan', 'kang', 'kar', 'kaw', 'kay', 'ke', 'ki', 'ko', 'ku', 'la', 'lah', 'lan', 'lang', 'lar', 'law', 'lay', 'le', 'li', 'lo', 'lu', 'ma', 'mah', 'man', 'mang', 'mar', 'maw', 'may', 'mba', 'mbah', 'mban', 'mbang', 'mbar', 'mbaw', 'mbay', 'mbe', 'mbi', 'mbo', 'mbu', 'me', 'mi', 'mo', 'mu', 'na', 'nah', 'nan', 'nang', 'nar', 'naw', 'nay', 'nda', 'ndah', 'ndan', 'ndang', 'ndar', 'ndaw', 'nday', 'nde', 'ndi', 'ndo', 'ndu', 'ne', 'nga', 'ngah', 'ngan', 'ngang', 'ngar', 'ngaw', 'ngay', 'nge', 'ngga', 'nggah', 'nggan', 'nggang', 'nggar', 'nggaw', 'nggay', 'ngge', 'nggi', 'nggo', 'nggu', 'ngi', 'ngo', 'ngu', 'ni', 'nja', 'njah', 'njan', 'njang', 'njar', 'njaw', 'njay', 'nje', 'nji', 'njo', 'nju', 'no', 'nu', 'nya', 'nyah', 'nyan', 'nyang', 'nyar', 'nyaw', 'nyay', 'nye', 'nyi', 'nyo', 'nyu', 'o', 'pa', 'pah', 'pan', 'pang', 'par', 'paw', 'pay', 'pe', 'pi', 'po', 'pu', 'ra', 'rah', 'ran', 'rang', 'rar', 'raw', 'ray', 're', 'ri', 'ro', 'ru', 'sa', 'sah', 'san', 'sang', 'sar', 'saw', 'say', 'se', 'si', 'so', 'su', 'ta', 'tah', 'tan', 'tang', 'tar', 'taw', 'tay', 'te', 'ti', 'to', 'tu', 'u', 'wa', 'wah', 'wan', 'wang', 'war', 'waw', 'way', 'we', 'wi', 'wo', 'wu', 'ya', 'yah', 'yan', 'yang', 'yar', 'yaw', 'yay', 'ye', 'yi', 'yo', 'yu']
+
+roboflow:
+  workspace: muhammad-ariqoh-firjatullah
+  project: aksara-ulu-rejang-kyn9c
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/muhammad-ariqoh-firjatullah/aksara-ulu-rejang-kyn9c/dataset/1
