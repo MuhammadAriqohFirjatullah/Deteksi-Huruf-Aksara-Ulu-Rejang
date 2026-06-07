@@ -6,11 +6,11 @@ Sistem deteksi tulisan Aksara Ulu Rejang (Kaganga) menggunakan model deep learni
 
 ## 👥 Anggota Kelompok
 
-| No. | Nama | NIM |
-|-----|------|-----|
-| 1 | Muhammad Ariqoh Firjatullah | G1A023033 |
-| 2 | Muhammad Jaka | G1A023042 |
-| 3 | Muhammad Dizi Valgiyos | G1A023072 |
+No. | Nama | NIM
+--- | --- | ---
+1 | Muhammad Ariqoh Firjatullah | G1A0230332
+2 | Muhammad Jaka | G1A0230423
+3 | Muhammad Dizi Valgiyos | G1A023072
 
 ---
 
@@ -47,15 +47,16 @@ Aksara Ulu Rejang.v1i.yolov11/
 ├── README.roboflow.txt             # Informasi dataset dari Roboflow
 ├── README.dataset.txt              # Informasi metadata dataset
 ├── README.results.txt              # Hasil pelatihan
-├── train/                          # Dataset training (images & labels)
-│   ├── images/
-│   └── labels/
-├── valid/                          # Dataset validasi
-│   ├── images/
-│   └── labels/
-├── test/                           # Dataset test
-│   ├── images/
-│   └── labels/
+├── dataset/                        # Dataset terorganisir
+│   ├── train/
+│   │   ├── images/
+│   │   └── labels/
+│   ├── valid/
+│   │   ├── images/
+│   │   └── labels/
+│   └── test/
+│       ├── images/
+│       └── labels/
 ├── classifier_dataset/             # Dataset untuk klasifikasi (opsional)
 │   ├── train/
 │   ├── valid/
@@ -74,13 +75,13 @@ Aksara Ulu Rejang.v1i.yolov11/
 
 ### 1. Install Dependensi
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
 ### 2. Jalankan Aplikasi
 
-```bash
+```
 python app.py
 ```
 
@@ -95,7 +96,7 @@ SISTEM DETEKSI AKSARA KAGANGA YOLOv11
 3. Prediksi 1 Gambar
 4. Prediksi Folder Gambar
 5. Informasi Dataset
-6. Informasi Classifier Dataset
+6. Informasi Performa Model (Laporan)
 7. Keluar
 # ==================================================
 ```
@@ -104,7 +105,7 @@ SISTEM DETEKSI AKSARA KAGANGA YOLOv11
 
 ## 📋 Panduan Penggunaan
 
-### 1. **Training Model**
+### 1. **Training Model**
 
 Pilih menu `1` untuk melatih model baru:
 
@@ -115,6 +116,7 @@ Samakan augmentasi seperti Roboflow? (Y/n): Y
 ```
 
 **Parameter:**
+
 - **Epoch**: Jumlah iterasi training (default: 10)
 - **Image Size**: Ukuran input gambar (default: 416, sesuai Roboflow)
 - **Augmentation**: Gunakan augmentasi Roboflow (default: Y)
@@ -123,7 +125,7 @@ Samakan augmentasi seperti Roboflow? (Y/n): Y
 
 ---
 
-### 2. **Validasi Model**
+### 2. **Validasi Model**
 
 Pilih menu `2` untuk memvalidasi model pada dataset validasi.
 
@@ -131,7 +133,7 @@ Pilih menu `2` untuk memvalidasi model pada dataset validasi.
 
 ---
 
-### 3. **Prediksi 1 Gambar**
+### 3. **Prediksi 1 Gambar**
 
 Pilih menu `3` untuk mendeteksi tulisan Kaganga pada satu gambar:
 
@@ -140,13 +142,14 @@ Masukkan path/nama gambar: path/to/image.jpg
 ```
 
 **Output:**
+
 - Nama kelas yang terdeteksi
 - Confidence score
 - Gambar dengan bounding box disimpan di `predictions/single/`
 
 ---
 
-### 4. **Prediksi Folder Gambar**
+### 4. **Prediksi Folder Gambar**
 
 Pilih menu `4` untuk mendeteksi semua gambar dalam folder:
 
@@ -158,18 +161,20 @@ Masukkan path folder gambar: path/to/folder
 
 ---
 
-### 5. **Informasi Dataset**
+### 5. **Informasi Dataset**
 
 Pilih menu `5` untuk melihat:
+
 - Jumlah kelas (253)
 - Nama-nama kelas
 - Jumlah gambar per split (train/valid/test)
 
 ---
 
-### 6. **Informasi Classifier Dataset**
+### 6. **Informasi Classifier Dataset**
 
 Pilih menu `6` untuk melihat statistik `classifier_dataset/`:
+
 - Jumlah gambar per kelas
 - Distribusi data
 - Contoh nama kelas
@@ -191,7 +196,7 @@ numpy
 
 Instal dengan:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -229,13 +234,12 @@ a, ah, an, ang, ar, aw, ay, ba, bah, ban, bang, bar, baw, bay, be, bi, bo, bu, c
 Setelah pelatihan, model akan menghasilkan:
 
 - **Metrik**:
-  ```
-  Precision   : 97.5%
-  Recall      : 99.1%
-  mAP50       : [nilai]
-  mAP50-95    : 98.9%
-  ```
-
+```
+Precision   : 97.5%
+Recall      : 99.1%
+mAP50       : [nilai]
+mAP50-95    : 98.9%
+```
 - **File Model**: `models/best.pt`
 - **Training Logs**: `models/training/`
 - **Weights History**: `models/training/weights/`
@@ -248,7 +252,7 @@ Setelah pelatihan, model akan menghasilkan:
 
 Jika training gagal karena GPU memory penuh:
 
-```bash
+```
 # Ubah batch size di app.py dari 16 ke 8 atau 4
 batch=8  # atau 4
 ```
@@ -257,10 +261,10 @@ batch=8  # atau 4
 
 Pastikan struktur folder sesuai dengan `data.yaml`:
 
-```yaml
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+```
+train: dataset/train/images
+val: dataset/valid/images
+test: dataset/test/images
 ```
 
 ### 3. Model Tidak Terbaca

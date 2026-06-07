@@ -1,3 +1,8 @@
-ultralytics>=8.4.0
+ultralytics>=8.0
+pandas
+matplotlib
+opencv-python
+scikit-learn
 pyyaml
-pillow
+tqdm
+seaborn
